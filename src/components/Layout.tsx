@@ -7,9 +7,9 @@ import Navbar from "./Navbar";
 
 const Layout = () => {
   return (
-    <div className="max-w-[1000px] m-auto px-3 md:px-2" id="top">
+    <div id="top">
       <Navbar />
-      <main>
+      <main className="flex flex-col gap-5 max-w-[1000px] m-auto px-3 md:px-2">
         <Home />
         <About />
         <Education />

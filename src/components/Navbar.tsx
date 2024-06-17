@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="sticky top-0 w-full background z-30">
-      <div className="flex flex-col md:flex-row gap-5 md:items-center justify-between pt-10 pb-3 md:pb-6 m-auto">
+      <div className="flex flex-col md:flex-row gap-5 md:items-center justify-between pt-10 pb-3 md:pb-6 px-2 lg:px-2 max-w-[1000px] m-auto">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold uppercase text-primary button-animation cursor-pointer">
             <a href="#top">YASHIL</a>
@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
             className="md:hidden button-animation"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <Menu className="size-8" />
+            <Menu className="size-7" />
           </button>
         </div>
         <ul

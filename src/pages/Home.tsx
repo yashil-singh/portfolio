@@ -3,7 +3,6 @@ import hero from "../assets/hero-section.png";
 
 const Home: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  console.log("🚀 ~ imageLoaded:", imageLoaded);
 
   useEffect(() => {
     const img = new Image();
@@ -12,15 +11,15 @@ const Home: React.FC = () => {
   }, []);
   return (
     <section id="home">
-      <div className="min-h-[calc(100vh-100px)] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-5">
-        <div className="space-y-4">
-          <h2 className="uppercase text-primary text-xl ">
+      <div className="min-h-[calc(100vh-100px)] flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+        <div className="space-y-4 md:space-y-6">
+          <h2 className="uppercase text-primary md:text-xl">
             Hello! <span className="animate-pulse duration-75">👋</span>
           </h2>
-          <h1 className="uppercase text-[50px]">
+          <h1 className="uppercase text-3xl md:text-[50px] leading-tight">
             I'm <span className="text-primary">Yashil Singh</span>
           </h1>
-          <h2 className="text-3xl">
+          <h2 className="text-xl md:text-3xl">
             I'm a <span className="text-primary">web developer</span> based in
             Nepal. I love to code and design.
           </h2>
