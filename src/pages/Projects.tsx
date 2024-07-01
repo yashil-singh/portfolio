@@ -6,9 +6,37 @@ const Projects: React.FC = () => {
     {
       title: "Threads Clone",
       desc: `Built a clone of the popular social media platform called Threads consising all the functionalities using MERN.`,
-      tech: ["React.js", "Node.js", "MongoDB", "TailwindCSS"],
+      tech: ["React.js", "Node.js", "MongoDB", "TailwindCSS", "Typescript"],
       githubUrl: "https://github.com/yashil-singh/threads",
-      url: "abc",
+      url: null,
+    },
+    {
+      title: "Portfolio Website",
+      desc: `Built my portfolio website which you are currently viewing.`,
+      tech: ["React.js", "TailwindCSS", "Typescript"],
+      githubUrl: "https://github.com/yashil-singh/portfolio",
+      url: null,
+    },
+    {
+      title: "Uthau (Final Year Project)",
+      desc: `Developed a fitness and gym application as my final year project. The mobile application helps users in their fitness journey with fully fuctional admin panel.`,
+      tech: ["React.js", "React Native", "Node.js", "Express.js", "PostgreSQL"],
+      githubUrl: "https://github.com/yashil-singh/uthau_app",
+      url: null,
+    },
+    {
+      title: "Workout Traker",
+      desc: `Built a simple website to track exercises. Users can make accounts and sign in. Users can also add and delete exercises. Every user have their own unique list of exercises.`,
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
+      githubUrl: "https://github.com/yashil-singh/workout-react-app",
+      url: null,
+    },
+    {
+      title: "AI-Prompt Sharing",
+      desc: `Built a website where users can discover and share prompts that can be used with AI-platforms. These are prompts that can be give to AI to use it the right way.`,
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
+      githubUrl: "https://github.com/yashil-singh/workout-react-app",
+      url: null,
     },
   ];
 
@@ -31,14 +59,14 @@ const Projects: React.FC = () => {
                 {project.githubUrl && (
                   <button
                     className="hover:text-primary transition-all"
-                    onClick={() => window.open(project?.url, "_blank")}
+                    onClick={() => window.open(project?.githubUrl, "_blank")}
                   >
                     <Github />
                   </button>
                 )}
                 {project.url && (
                   <button
-                    onClick={() => window.open(project?.githubUrl, "_blank")}
+                    onClick={() => window.open(project?.url, "_blank")}
                     className="hover:text-primary transition-all"
                   >
                     <Link />
