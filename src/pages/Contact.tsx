@@ -4,14 +4,14 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 
 const Contact: React.FC = () => {
-  const form = useRef();
+  const form = useRef<HTMLFormElement | null>(null);
   const [isSubmitting, setisSubmitting] = useState(false);
 
-  const sendMail = async (e) => {
+  const sendMail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setisSubmitting(true);
     const response = await toast.promise(
-      emailjs.sendForm("service_u5xg1cp", "template_9yzo4r9", form.current, {
+      emailjs.sendForm("service_u5xg1cp", "template_9yzo4r9", form.current!, {
         publicKey: "YjC9No9Xaqs3_2tM-",
       }),
       {
@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
     );
 
     if (response.status === 200) {
-      form.current.reset();
+      form.current!.reset();
     }
 
     setisSubmitting(false);
@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
         >
           <div className="relative">
             <input
-              className="peer p-3 w-full rounded outline-none bg-inherit border border-white focus:border-primary z-10"
+              className="peer p-3 w-full rounded outline-none bg-inherit border border-white focus:border-primary z-20"
               type="text"
               name="user_name"
               placeholder=" "
