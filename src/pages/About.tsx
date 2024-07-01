@@ -41,6 +41,8 @@ const About: React.FC = () => {
           <strong>Phone:</strong>
           <p className="col-span-2">+977-9864166916</p>
         </div>
+
+        <p>Here are a few technologies I’ve been working with recently:</p>
         <a href={resume} download="Yashil Lal Singh - CV" className="flex">
           <p className="font-semibold bg-primary rounded py-3 px-5 hover:bg-primary/90 transition-all button-animation self-start">
             Download Resume

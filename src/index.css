@@ -11,16 +11,11 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.background {
-  background-color: #242424;
 }
 
 html {
@@ -57,6 +52,19 @@ body {
 
 .button-animation:active {
   transform: scale(98%);
+}
+
+/* Style the scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #242424;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d7c0ae;
 }
 
 @media (prefers-color-scheme: light) {
