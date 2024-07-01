@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
                 )}
                 {project.url && (
                   <button
-                    onClick={() => window.open(project?.url, "_blank")}
+                    onClick={() => window.open(project.url!, "_blank")}
                     className="hover:text-primary transition-all"
                   >
                     <Link />
