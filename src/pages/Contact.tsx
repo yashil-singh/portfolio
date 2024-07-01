@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
       <h1 className="text-primary text-3xl md:text-[50px] leading-tight flex items-center gap-3">
         <Contact2 className="size-10" /> Contact
       </h1>
-      <div className="flex w-full justify-around gap-5">
+      <div className="flex max-md:flex-col items-center w-full justify-around gap-5">
         <div className="flex flex-col gap-5 text-center">
           <h1 className="text-3xl font-bold text-primary">
             Let's talk about anything
@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="w-1 bg-black/50"></div>
+        <div className="w-1 max-md:w-full max-md:h-1 bg-black/50"></div>
         <form
           className="flex flex-col gap-5 w-full max-w-[500px]"
           ref={form}
