@@ -32,6 +32,7 @@ const RootLayout = () => {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsInfoOpen(!isInfoOpen)}
+                asChild
               >
                 <motion.span
                   animate={{ rotate: isInfoOpen ? 0 : 180 }}
@@ -40,13 +41,14 @@ const RootLayout = () => {
                     scale: { type: "spring", visualDuration: 0.2, bounce: 0.5 },
                   }}
                 >
-                  <ChevronUp className="size-6" />
+                  <ChevronUp className="text-primary size-6" />
                 </motion.span>
               </Button>
 
               <img
                 src="/images/me.png"
-                alt="me"
+                alt="yashil"
+                loading="lazy"
                 className="size-40 rounded-xl object-cover"
               />
               <div className="flex flex-col gap-2">

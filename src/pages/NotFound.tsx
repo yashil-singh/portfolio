@@ -9,7 +9,9 @@ const NotFound = () => {
         <div className="mx-auto flex h-screen max-w-4xl flex-col items-center justify-center gap-8 p-4 md:flex-row md:gap-14">
           <img
             src="/images/404.svg"
+            alt="404"
             className="aspect-square w-full max-w-[450px]"
+            loading="lazy"
           />
 
           <div className="space-y-6">

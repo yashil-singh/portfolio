@@ -19,7 +19,12 @@ const Projects = () => {
         <h1 className="text-center text-xl font-bold">
           ...and that's all for now. More projects coming soon!
         </h1>
-        <img src="images/saluting-face.png" className="size-7" />
+        <img
+          src="images/saluting-face.png"
+          alt="saluting-face"
+          className="size-7"
+          loading="lazy"
+        />
       </span>
     </>
   );

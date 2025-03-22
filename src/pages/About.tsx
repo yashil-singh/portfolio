@@ -35,6 +35,7 @@ const About = () => {
             <img
               src={tech.src}
               alt={tech.name}
+              loading="lazy"
               className="size-8 object-contain"
             />
             <span className="font-medium">{tech.name}</span>
