@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <motion.header
-      className="bg-secondary absolute top-0 right-0 hidden rounded-tr-xl rounded-bl-xl px-8 py-4 md:block"
+      className="bg-secondary absolute top-0 right-0 z-10 hidden items-center justify-center gap-8 rounded-tr-xl rounded-bl-xl px-8 py-4 md:flex"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -17,29 +17,20 @@ const Header = () => {
         scale: { type: "spring", visualDuration: 0.4, bounce: 0 },
       }}
     >
-      <ul className="flex gap-8 font-medium">
-        <li>
-          <Link to="/" className={cn(path === "/" && "text-primary")}>
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/projects"
-            className={cn(path === "/projects" && "text-primary")}
-          >
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/contact"
-            className={cn(path === "/contact" && "text-primary")}
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
+      <Link to="/" className={cn(path === "/" && "text-primary")}>
+        About
+      </Link>
+
+      <Link
+        to="/projects"
+        className={cn(path === "/projects" && "text-primary")}
+      >
+        Projects
+      </Link>
+
+      <Link to="/contact" className={cn(path === "/contact" && "text-primary")}>
+        Contact
+      </Link>
     </motion.header>
   );
 };

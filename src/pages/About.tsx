@@ -4,6 +4,7 @@ import Heading from "@/components/Heading";
 import experiences from "@/assets/data/experience";
 import education from "@/assets/data/education";
 import List from "@/components/List";
+import { BriefcaseBusiness, GraduationCap } from "lucide-react";
 
 const About = () => {
   return (
@@ -11,7 +12,7 @@ const About = () => {
       <Heading title="About Me" />
 
       {/* About */}
-      <p className="text-muted-foreground mt-4 text-justify italic">
+      <p className="text-muted-foreground mt-4 font-sans italic">
         Hello there! I am Yashil Singh from Nepal. You can call me Yashil. Fresh
         out of my bachelor's in Computing, I'm a web development enthusiast with
         a keen eye for frontend design. I love crafting visually stunning UIs
@@ -44,18 +45,14 @@ const About = () => {
       {/* Experience */}
       <List
         title="Experience"
-        imageSrc="/images/briefcase.svg"
+        Icon={BriefcaseBusiness}
         listData={experiences}
       />
 
       <span></span>
 
       {/* Education */}
-      <List
-        title="Education"
-        imageSrc="images/graduation-cap.svg"
-        listData={education}
-      />
+      <List title="Education" Icon={GraduationCap} listData={education} />
     </>
   );
 };

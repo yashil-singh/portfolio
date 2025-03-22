@@ -6,6 +6,9 @@ import MobileNavBar from "@/components/MobileNavbar.tsx";
 import { Toaster } from "@/components/ui/sonner";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import { ChevronUp, Download } from "lucide-react";
+import SocialLink from "./SocialLink";
+import resume from "@/assets/Yashil Lal Singh - CV.pdf";
 
 const RootLayout = () => {
   const [isInfoOpen, setIsInfoOpen] = useState(true);
@@ -15,7 +18,7 @@ const RootLayout = () => {
       <main className="relative backdrop-blur-[100px] md:backdrop-blur-[200px]">
         <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col items-start gap-4 px-4 pt-4 lg:flex-row lg:pt-8">
           <motion.div
-            className="bg-card top-5 mt-8 flex w-full flex-col items-center rounded-xl border p-8 lg:sticky lg:max-w-[350px]"
+            className="bg-card top-5 mt-8 flex w-full flex-col items-center gap-6 rounded-xl border p-8 lg:sticky lg:max-w-[350px]"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -23,7 +26,7 @@ const RootLayout = () => {
               scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
             }}
           >
-            <div className="after:bg-secondary relative flex w-full gap-5 text-center after:hidden after:h-0.5 after:w-full after:rounded-full lg:flex-col lg:items-center lg:after:block">
+            <div className="relative flex w-full flex-col items-center gap-5 text-center sm:flex-row sm:items-start lg:flex-col lg:items-center">
               <Button
                 className="absolute -top-4 -right-4 rounded-full"
                 variant="ghost"
@@ -37,9 +40,10 @@ const RootLayout = () => {
                     scale: { type: "spring", visualDuration: 0.2, bounce: 0.5 },
                   }}
                 >
-                  <img src="/images/chevron-up.svg" className="size-6" />
+                  <ChevronUp className="size-6" />
                 </motion.span>
               </Button>
+
               <img
                 src="/images/me.png"
                 alt="me"
@@ -58,49 +62,36 @@ const RootLayout = () => {
             <AnimatePresence>
               {isInfoOpen && (
                 <motion.div
-                  className="flex w-full flex-col gap-4 overflow-hidden pt-8"
+                  className="flex w-full flex-col gap-4 overflow-hidden"
                   initial={{ height: 0 }}
                   animate={{ height: "auto" }}
                   exit={{ height: 0 }}
                   transition={{ type: "spring", duration: 0.2, bounce: 0 }}
                 >
+                  <div className="bg-border h-0.5 w-full rounded-full"></div>
+
                   {socialLinks.map((social) => (
-                    <div
-                      key={social.name}
-                      className="text-foreground flex w-full items-center gap-4"
-                    >
-                      <div className="bg-secondary flex size-12 items-center justify-center rounded-lg">
-                        <img
-                          src={social.src}
-                          alt={social.name}
-                          className="size-6"
-                        />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-muted-foreground text-sm">
-                          {social.name}
-                        </span>
-                        {social.isLink ? (
-                          <a
-                            href={social.link ?? ""}
-                            target="_blank"
-                            className="underline"
-                          >
-                            {social.value}
-                          </a>
-                        ) : (
-                          <span className="font-medium">{social.value}</span>
-                        )}
-                      </div>
-                    </div>
+                    <SocialLink data={social} />
                   ))}
+
+                  <div className="bg-border h-0.5 w-full rounded-full"></div>
+
+                  <Button variant="secondary" size="lg" asChild>
+                    <a
+                      href={resume}
+                      download="Yashil Lal Singh - CV"
+                      target="_blank"
+                    >
+                      <Download /> Download Resume
+                    </a>
+                  </Button>
                 </motion.div>
               )}
             </AnimatePresence>
           </motion.div>
 
           <motion.div
-            className="bg-card relative flex w-full flex-col gap-8 overflow-hidden rounded-t-xl border p-8 pb-24 max-md:rounded-b-xl lg:min-h-[calc(100vh-32px)]"
+            className="bg-card relative flex min-h-[calc(100vh-290px)] w-full flex-col gap-8 overflow-hidden rounded-t-xl border p-8 pb-24 max-md:rounded-b-xl lg:min-h-[calc(100vh-32px)]"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -110,6 +101,7 @@ const RootLayout = () => {
             }}
           >
             <Header />
+
             <Outlet />
           </motion.div>
         </div>
@@ -137,8 +129,8 @@ const RootLayout = () => {
         }}
       />
 
-      <div className="from-primary via-primary to-background fixed -top-[5%] left-[5%] -z-10 size-[300px] rounded-full bg-radial opacity-30 blur-3xl md:-top-[10%] md:left-[10%] md:size-[400px]"></div>
-      <div className="from-primary via-primary to-background fixed right-[5%] -bottom-[5%] -z-10 size-[300px] rounded-full bg-radial opacity-30 blur-3xl md:right-[10%] md:-bottom-[10%] md:size-[400px]"></div>
+      <div className="from-primary via-primary to-background fixed -top-[5%] left-[5%] -z-10 size-[300px] rounded-full bg-radial opacity-50 blur-3xl md:-top-[10%] md:left-[10%] md:size-[400px]"></div>
+      <div className="from-primary via-primary to-background fixed right-[5%] -bottom-[5%] -z-10 size-[300px] rounded-full bg-radial opacity-50 blur-3xl md:right-[10%] md:-bottom-[10%] md:size-[400px]"></div>
     </>
   );
 };

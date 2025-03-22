@@ -1,33 +1,34 @@
-import { SocialLink } from "@/lib/types";
+import { SocialLinkType } from "@/lib/types";
+import { Github, Linkedin, Mail, Smartphone } from "lucide-react";
 
-const socialLinks: SocialLink[] = [
+const socialLinks: SocialLinkType[] = [
   {
     name: "Email",
     value: "yashilsingh0208@gmail.com",
     isLink: false,
     link: null,
-    src: "images/gmail.svg",
+    Icon: Mail,
   },
   {
     name: "Phone",
     value: "9864166916",
     isLink: false,
     link: null,
-    src: "images/phone.svg",
+    Icon: Smartphone,
   },
   {
     name: "Github",
     value: "yashil-singh",
     isLink: true,
     link: "https://github.com/yashil-singh",
-    src: "images/github.svg",
+    Icon: Github,
   },
   {
     name: "LinkedIn",
     value: "Yashil Singh",
     isLink: true,
     link: "https://www.linkedin.com/in/yashil-singh-31359b219/",
-    src: "images/linkedin.svg",
+    Icon: Linkedin,
   },
 ];
 

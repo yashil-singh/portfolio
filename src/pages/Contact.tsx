@@ -17,6 +17,7 @@ import { toast } from "sonner";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { emailJsConfig } from "@/lib/constants";
+import { Loader2 } from "lucide-react";
 
 const formSchema = z.object({
   from_name: z
@@ -120,7 +121,7 @@ const Contact = () => {
                   <Textarea
                     placeholder="Write something..."
                     {...field}
-                    className="resize-y"
+                    className="max-h-[350px] min-h-[150px] resize-y"
                   />
                 </FormControl>
                 <FormMessage />
@@ -132,14 +133,10 @@ const Contact = () => {
             type="submit"
             variant="secondary"
             size="lg"
-            className="text-primary w-full"
+            className="w-full lg:w-fit"
             disabled={isSending}
           >
-            {isSending ? (
-              <img src="/images/loader.svg" className="animate-spin" />
-            ) : (
-              "Submit"
-            )}
+            {isSending ? <Loader2 className="animate-spin" /> : "Submit"}
           </Button>
         </form>
       </Form>

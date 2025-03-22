@@ -1,4 +1,5 @@
 import { Project } from "@/lib/types";
+import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ProjectFile = ({ project }: { project: Project }) => {
@@ -12,7 +13,7 @@ const ProjectFile = ({ project }: { project: Project }) => {
         {/* Folder Tab */}
         <div className="bg-background absolute -top-5 left-0 h-8 w-full max-w-32 rounded-t-xl"></div>
 
-        <h2 className="text-primary font-bold">{title}</h2>
+        <h2 className="text-primary line-clamp-1 font-bold">{title}</h2>
 
         <p className="line-clamp-3 min-h-[60px] text-sm">{description}</p>
 
@@ -29,7 +30,7 @@ const ProjectFile = ({ project }: { project: Project }) => {
               className="flex items-center gap-1 text-sm"
             >
               <span className="hover:underline">{link.type}</span>
-              <img src="images/external-link.svg" className="size-4" />
+              <ExternalLink className="text-primary size-4" />
             </Link>
           ))}
         </div>

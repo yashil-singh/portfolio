@@ -10,7 +10,7 @@ const ListItem = ({ data }: { data: ListItemType }) => {
         <span className="font-semibold">{subTitle}</span>
         <br />
         <span>{location}</span>
-        <p className="text-muted-foreground mt-2 text-justify italic">
+        <p className="text-muted-foreground mt-2 font-sans italic">
           {description}
         </p>
       </div>

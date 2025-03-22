@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 export type Project = {
   title: string;
   description: string;
@@ -8,12 +10,12 @@ export type Project = {
   }[];
 };
 
-export type SocialLink = {
+export type SocialLinkType = {
   name: string;
   value: string;
   isLink: boolean;
   link: string | null;
-  src: string;
+  Icon: LucideIcon;
 };
 
 export type ListItemType = {

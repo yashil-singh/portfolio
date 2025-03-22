@@ -1,20 +1,21 @@
 import { ListItemType } from "@/lib/types";
 import ListItem from "./ListItem";
+import { LucideIcon } from "lucide-react";
 
 const List = ({
   title,
-  imageSrc,
+  Icon,
   listData,
 }: {
   title: string;
-  imageSrc: string;
+  Icon: LucideIcon;
   listData: ListItemType[];
 }) => {
   return (
     <div>
       <div className="flex items-center gap-4">
         <div className="bg-secondary rounded-lg p-3">
-          <img src={imageSrc} alt={imageSrc} className="size-6" />
+          <Icon className="text-primary size-6" />
         </div>
         <h2 className="text-lg font-bold">{title}</h2>
       </div>
